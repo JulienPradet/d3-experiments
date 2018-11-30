@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+      L'évolution des oeuvres présentées au musée des Augustins (Toulouse,
+      France)
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      .js-total-collection::after {
+        content: attr(txt);
+      }
+      .js-raw-collection svg {
+        filter: url("#goo");
+        margin: 0 auto;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display: none">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+            result="goo"
+          />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+    <h1>Le musée des Augustins</h1>
+    <p>
+      C'est un des rares musées ouvrant ses données et permettant de mieux
+      comprendre d'où viennent les oeuvres.
+    </p>
+
+    <section>
+      <h2>Un total de <span class="js-total-collection">0</span> oeuvres</h2>
+      <div class="js-raw-collection"></div>
+    </section>
+  </body>
+</html>
